@@ -459,7 +459,6 @@ df.new$cluster = rownames(df.new)
 df.new = df.new %>% reshape2::melt(id.vars = c("cluster"))
 colnames(df.new)[2:3] = c("module","score_scaled")
 
-#画图
 df.new %>% ggplot(aes(x=cluster,y=module,fill=score_scaled))+
   geom_tile()+
   scale_x_discrete(expand = c(0,0))+
